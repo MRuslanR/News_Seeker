@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  news-bot:
+    build: .
+    container_name: news_digest_bot
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./config.xlsx:/app/config.xlsx
+      - ./data:/app/data
