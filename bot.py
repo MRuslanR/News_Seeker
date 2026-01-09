@@ -85,7 +85,7 @@ async def run_processing_job(context: ContextTypes.DEFAULT_TYPE, chat_id: int, t
         try:
             proc_msg = await context.bot.send_message(chat_id=chat_id,
                                                       text=f"🚀 Начинаю обработку новостей... (Запуск: {trigger_type})")
-            logger.info("Запуск main_cycle для чата %d", chat_id)
+            logger.info(f"Запуск main_cycle для чата {chat_id}")
 
             main_message = await asyncio.to_thread(main_cycle)
 
