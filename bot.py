@@ -96,7 +96,7 @@ async def run_processing_job(context: ContextTypes.DEFAULT_TYPE, chat_id: int, t
                 logger.info("Новых новостей для отправки нет. Цикл завершен.")
                 await context.bot.send_message(chat_id=chat_id, text="No news for the past period")
             else:
-                logger.info("Отправка итогового сообщения в чат %d.", chat_id)
+                logger.info(f"Отправка итогового сообщения в чат {chat_id}")
                 await send_long_message(context, chat_id, main_message)
 
         except Exception as e:
