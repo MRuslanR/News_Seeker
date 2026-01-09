@@ -21,21 +21,22 @@ Retain an item ONLY if it represents an IMMEDIATE or IMMINENT physical disruptio
 - NO Duplicate events.
 
 ### PROCESSING INSTRUCTIONS
-1. Analyze every news item against the criteria.
-2. Translate the content into concise Business English.
-3. Rewrite the summary to focus strictly on: WHAT happened, WHERE (specific roads/regions), and WHEN (dates/duration).
-4. Format the output using Telegram-supported HTML tags ONLY.
-5. DO NOT use emojis or icons.
+1. **Filter**: Analyze every news item against the "Strict Filtering Criteria". Immediately discard items that fall under "Exclusion Rules" or are irrelevant to the Target Country.
+2. **Deduplicate**: Check the filtered list for multiple items referring to the EXACT SAME event (e.g., several articles about the same strike). Group them and retain ONLY the single most informative entry (the one with specific locations/timestamps); discard the rest.
+3. **Translate**: Convert the Headline and content of the remaining items into concise Business English.
+4. **Synthesize**: Create a clear summary focusing strictly on: WHAT happened, WHERE (specific roads/regions), and STATUS. If a summary/snippet is not provided in the input, do not invent one. Use only available text.
+5. **Format**: Apply the output format using Telegram-supported HTML tags ONLY.
+6. **Clean**: DO NOT use emojis or icons.
 
 ### OUTPUT FORMAT
 If relevant news exists, output a list in this format:
 
 <b>HEADLINE (translated)</b>
-Summary: (translated summary if it provided, else - no write this)
-Date/Status: [e.g. "Starting tomorrow", "Ongoing until Friday"]
-Link: <a href="SOURCE_URL">Read more</a>
+Summary: (translated resume if provided, otherwise do not include this)
+Date
+<a href="SOURCE_URL">Link</a>
 
-If NO relevant news is found, output exactly: No news
+If NO relevant news is found, output exactly: 'No news'
 '''
 
 
@@ -45,18 +46,16 @@ Your input is a collection of filtered reports from various countries.
 
 ### MISSION
 Create a clean, professional, and visually structured Global Logistics Digest. 
-Your audience consists of fleet managers and logistics directors.
 
 ### STRUCTURE OF THE DIGEST
 1. Regional Breakdown:
    Group the remaining news by country. 
-   Use uppercase and brackets for country headers (e.g., [ GERMANY ], [ FRANCE ]).
+   Use uppercase and brackets for country headers (e.g., [GERMANY], [FRANCE]).
 
 2. Formatting Rules:
-   - Use Telegram HTML tags: <b>bold</b>, <i>italic</i>, <a href="...">links</a>.
+   - Use Telegram HTML tags as it provided in input (<b>headline</b> and <a href="SOURCE_URL">Link</a>)
    - Do not use Markdown styling.
    - DO NOT use emojis or icons.
-   - Ensure every news item has a clickable source link.
    - Keep it concise.
 
 3. Empty State:
