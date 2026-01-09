@@ -31,11 +31,11 @@ Retain an item ONLY if it represents an IMMEDIATE or IMMINENT physical disruptio
 If relevant news exists, output a list in this format:
 
 <b>HEADLINE (translated)</b>
-Impact: [Brief 1-sentence explanation of effect on logistics]
+Summary: (translated summary if it provided, else - no write this)
 Date/Status: [e.g. "Starting tomorrow", "Ongoing until Friday"]
 Link: <a href="SOURCE_URL">Read more</a>
 
-If NO relevant news is found, output exactly: NO_RELEVANT_NEWS
+If NO relevant news is found, output exactly: No news
 '''
 
 
