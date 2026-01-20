@@ -405,7 +405,7 @@ class NewsFetcher:
             f"<b>{item[1]}</b>\n<i>Published: {item[4].strftime('%Y-%m-%d')}</i>\n{item[2]}\n<a href='{item[3]}'>Source</a>"
             for item in new_unique_news
         ]
-        report_text = f"Country: {country_mapping_en[country_code]}\n"+ "\n\n".join(report_lines)
+        report_text = f"Target Country: {country_mapping_en[country_code]}\n"+ "\n\n".join(report_lines)
         return report_text, fetch_failures, fetch_alerts
     
 class OpenRouterClient:
