@@ -22,6 +22,36 @@ RSS_FAILURE_THRESHOLD = 5  # Кол-во сбоев для временного 
 RSS_COOLDOWN_HOURS = 24  # На сколько часов отключать сбойную ленту
 RSS_NOTIFICATION_COOLDOWN_DAYS = 7  # Не отправлять новое уведомление для того же URL в течение 7 дней
 
+country_mapping_en = {
+    "AT": "Austria",
+    "BG": "Bulgaria",
+    "HR": "Croatia",
+    "CY": "Cyprus",
+    "CZ": "Czech Republic",
+    "DK": "Denmark",
+    "EE": "Estonia",
+    "FI": "Finland",
+    "FR": "France",
+    "DE": "Germany",
+    "GR": "Greece",
+    "HU": "Hungary",
+    "IE": "Ireland",
+    "IT": "Italy",
+    "LV": "Latvia",
+    "LT": "Lithuania",
+    "LU": "Luxembourg",
+    "MT": "Malta",
+    "NL": "Netherlands",
+    "PL": "Poland",
+    "PT": "Portugal",
+    "RO": "Romania",
+    "SK": "Slovakia",
+    "SI": "Slovenia",
+    "ES": "Spain",
+    "SE": "Sweden",
+    "GB": "United Kingdom",
+    "BE": "Belgium"
+}
 
 class NewsFetcher:
     """
@@ -375,7 +405,7 @@ class NewsFetcher:
             f"<b>{item[1]}</b>\n<i>Published: {item[4].strftime('%Y-%m-%d')}</i>\n{item[2]}\n<a href='{item[3]}'>Source</a>"
             for item in new_unique_news
         ]
-        report_text = "\n\n".join(report_lines)
+        report_text = f"Country: {country_mapping_en[country_code]}\n"+ "\n\n".join(report_lines)
         return report_text, fetch_failures, fetch_alerts
     
 class OpenRouterClient:
