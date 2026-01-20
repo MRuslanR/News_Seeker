@@ -431,6 +431,8 @@ class OpenRouterClient:
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_content}
             ],
+            "reasoning": {"enabled": True},
+            "reasoning": {"effort": "low"}
         }
 
         try:
