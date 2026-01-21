@@ -56,7 +56,7 @@ Create a clean, professional, and visually structured Global Logistics Digest.
 2. Formatting Rules:
    - Use Telegram HTML tags as it provided in input (<b>headline</b> and <a href="SOURCE_URL">Link</a>)
    - Each part of the news on a new line 
-   - Include the headline and summary, omitting the words "headline" and "summary", just plain text.
+   - DO NOT start lines with "Headline:", "Summary:", "Title:", or any other labels, just plain text.
    - Do not use Markdown styling.
    - DO NOT use emojis or icons.
    - Keep it concise.
