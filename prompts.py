@@ -24,17 +24,16 @@ Retain an item ONLY if it represents an IMMEDIATE or IMMINENT physical disruptio
 ### PROCESSING INSTRUCTIONS
 1. **Filter**: Analyze every news item against the "Strict Filtering Criteria". Immediately discard items that fall under "Exclusion Rules" or are irrelevant to the Target Country.
 2. **Deduplicate**: Check the filtered list for multiple items referring to the EXACT SAME event (e.g., several articles about the same strike). Group them and retain ONLY the single most informative entry (the one with specific locations/timestamps); discard the rest.
-3. **Translate**: Convert the Headline and content of the remaining items into concise Business English.
-4. **Synthesize**: Create a clear summary focusing strictly on: WHAT happened, WHERE (specific roads/regions), and STATUS. If a summary/snippet is not provided in the input, do not invent one. Use only available text.
+3. **Synthesize**: Create a clear summary focusing strictly on: WHAT happened, WHERE (specific roads/regions), and STATUS. If a summary/snippet is not provided in the input, do not invent one. Use only available text.
+4. **Translate**: Convert the Headline and summary into concise Business English.
 5. **Format**: Apply the output format using Telegram-supported HTML tags ONLY.
 6. **Clean**: DO NOT use emojis or icons.
 
 ### OUTPUT FORMAT
 If relevant news exists, output a list in this format:
 
-<b>HEADLINE (translated headline)</b>
-Summary: (translated resume)
-Date
+<b>translated headline</b>
+translated summary
 <a href="SOURCE_URL">Link</a>
 
 If NO relevant news is found, output exactly: 'No news'
